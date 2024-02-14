@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+
+    form {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    div{
+        margin: 0 70px 0 70px;
+    }
+</style>
+
+<body>
+
+    <h1>Image Gallery</h1>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+
+        <input type="file" name="image" id="file">
+        <input type="submit" name="" id="sub">
+
+    </form>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;">
+
+        {{#each arr}}
+        <img style="width: 300px; height: 200px; margin: 10px;border:2px solid black" src="{{this.path}}" alt="">
+
+        {{/each}}
+
+
+    </div>
+
+
+
+</body>
+
+</html>
